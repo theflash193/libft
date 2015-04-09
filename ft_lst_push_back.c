@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   ft_lst_push_back.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grass-kw <grass-kw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/26 11:29:12 by grass-kw          #+#    #+#             */
-/*   Updated: 2015/04/09 14:38:27 by grass-kw         ###   ########.fr       */
+/*   Created: 2015/02/05 14:01:01 by grass-kw          #+#    #+#             */
+/*   Updated: 2015/02/10 10:45:24 by grass-kw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strsub(char const *s, unsigned int start, size_t len)
+void	ft_lst_push_back(t_list **alst, t_list *elem)
 {
-	char	*ret;
-	int		i;
+	t_list	*tmp;
 
-	if (!s)
-		return (NULL);
-	i = 0;
-	if (!(ret = ft_strnew(len)))
-		return (NULL);
-	while (start--)
-		s++;
-	while (len--)
+	tmp = *alst;
+	if (!*alst)
+		*alst = elem;
+	else
 	{
-		ret[i] = *s;
-		i++;
-		s++;
+		while (tmp->next)
+			tmp = tmp->next;
+		tmp->next = elem;
 	}
-	return (ret);
 }

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: grass-kw <grass-kw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/29 12:27:44 by grass-kw          #+#    #+#             */
-/*   Updated: 2015/01/30 16:06:51 by grass-kw         ###   ########.fr       */
+/*   Created: 2015/02/05 13:25:34 by grass-kw          #+#    #+#             */
+/*   Updated: 2015/02/10 10:46:20 by grass-kw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 
 void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
 {
-	t_list	*tmp;
-
-	tmp = *alst;
-	
+	(*del)((*alst)->content, (*alst)->content_size);
+	free(*alst);
+	*alst = NULL;
 }

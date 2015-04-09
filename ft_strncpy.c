@@ -6,33 +6,23 @@
 /*   By: grass-kw <grass-kw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/22 14:55:07 by grass-kw          #+#    #+#             */
-/*   Updated: 2015/01/28 16:09:55 by grass-kw         ###   ########.fr       */
+/*   Updated: 2015/04/09 13:44:37 by grass-kw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 char	*ft_strncpy(char *dst, const char *src, size_t n)
 {
-	size_t	l;
-	int		diff;
+	char	*tmp;
 
-	l = ft_strlen(src);
-	if (l > n)
-	{
-		diff = l - n;
-		while (n--)
-		{
-			*dst = *src;
-			src++;
-			dst++;
-		}
-		while (diff--)
-		{
-			*dst = '\0';
-			dst++;
-		}
-		return (dst);
-	}
+	tmp = dst;
+	n++;
+	while (--n > 0 && *src != '\0')
+		*tmp++ = *src++;
+	n++;
+	while (--n > 0)
+		*tmp++ = '\0';
 	return (dst);
 }
