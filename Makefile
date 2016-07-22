@@ -1,4 +1,4 @@
-#******************************************************************************#
+# **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
@@ -6,9 +6,9 @@
 #    By: grass-kw <grass-kw@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/01/26 16:37:37 by grass-kw          #+#    #+#              #
-#    Updated: 2015/01/26 16:38:05 by grass-kw         ###   ########.fr        #
+#    Updated: 2016/07/22 15:15:28 by grass-kw         ###   ########.fr        #
 #                                                                              #
-#******************************************************************************#
+# **************************************************************************** #
 
 
 
@@ -34,7 +34,9 @@ FILES= ft_memset.c ft_bzero.c ft_strlen.c ft_strcpy.c \
 		ft_ispace.c ft_islower.c ft_isblank.c ft_isblank2.c ft_isupper.c \
 		ft_islower.c ft_isalnum.c \
 		ft_lstnew.c ft_lstdelone.c ft_lstdel.c ft_lstadd.c ft_lstiter.c \
-		ft_lstmap.c ft_lst_push_back.c ft_strndup.c
+		ft_lstmap.c ft_lst_push_back.c ft_strndup.c ft_capitalize.c \
+		bit_display.c padding_left.c padding_right.c recovered_bit.c \
+		ft_joinclr.c \
 
 
 OBJ=$(FILES:.c=.o)

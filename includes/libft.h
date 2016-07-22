@@ -6,7 +6,7 @@
 /*   By: grass-kw <grass-kw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 13:22:30 by grass-kw          #+#    #+#             */
-/*   Updated: 2016/04/24 14:18:02 by grass-kw         ###   ########.fr       */
+/*   Updated: 2016/07/22 15:13:36 by grass-kw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,5 +111,11 @@ void				ft_strclean(char *s);
 double				ft_atof(char const *const src);
 long				ft_atol(const char *str);
 void				ft_putdouble(double n, size_t afterpoint);
-
+void				ft_capitalize(char *s);
+void				bit_display(unsigned long number, int start, int end);
+char				*padding_left(size_t lenght_max, char *s, int justify);
+char				*padding_right(size_t lenght_max, char *s, int justify);
+unsigned int		recovered_bit(unsigned int position, unsigned long nombre);
+void				ft_strclean2(char **s);
+char				*ft_joinclr(char *s1, char *s2, int mode);
 #endif
