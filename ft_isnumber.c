@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_isnumber.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grass-kw <grass-kw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/23 11:37:52 by grass-kw          #+#    #+#             */
-/*   Updated: 2015/04/24 16:58:02 by grass-kw         ###   ########.fr       */
+/*   Created: 2015/05/05 11:32:55 by grass-kw          #+#    #+#             */
+/*   Updated: 2015/05/05 11:46:46 by grass-kw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <libft.h>
 
-char	*ft_strcat(char *s1, const char *s2)
+int	ft_isnumber(char *s)
 {
-	char	*tmp;
-	int		i;
+	int	i;
 
-	tmp = s1;
 	i = 0;
-	while (tmp[i])
-		i++;
-	while (*s2)
+	if (s == NULL)
+		return (0);
+	if (ft_strequ(s, ""))
+		return (0);
+	while (s[i])
 	{
-		tmp[i] = *s2;
+		if (!ft_isdigit(s[i]))
+			return (0);
 		i++;
-		s2++;
 	}
-	tmp[i] = '\0';
-	return (s1);
+	return (1);
 }

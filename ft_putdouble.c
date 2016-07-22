@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_putdouble.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grass-kw <grass-kw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/23 11:37:52 by grass-kw          #+#    #+#             */
-/*   Updated: 2015/04/24 16:58:02 by grass-kw         ###   ########.fr       */
+/*   Created: 2015/05/25 17:39:28 by anonymous         #+#    #+#             */
+/*   Updated: 2015/06/02 04:06:33 by grass-kw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "math.h"
 
-char	*ft_strcat(char *s1, const char *s2)
+void	ft_putdouble(double n, size_t afterpoint)
 {
-	char	*tmp;
-	int		i;
+	int		ipart;
+	double	fpart;
 
-	tmp = s1;
-	i = 0;
-	while (tmp[i])
-		i++;
-	while (*s2)
+	ipart = (int)n;
+	fpart = n - (double)ipart;
+	if (fpart < 0)
+		fpart *= -1.0;
+	if (afterpoint != 0)
 	{
-		tmp[i] = *s2;
-		i++;
-		s2++;
+		fpart = fpart * pow(10, afterpoint);
+		ft_putnbr(ipart);
+		ft_putchar('.');
+		ft_putnbr(fpart);
 	}
-	tmp[i] = '\0';
-	return (s1);
 }

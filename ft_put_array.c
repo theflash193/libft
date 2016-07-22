@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_put_array.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grass-kw <grass-kw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/23 11:37:52 by grass-kw          #+#    #+#             */
-/*   Updated: 2015/04/24 16:58:02 by grass-kw         ###   ########.fr       */
+/*   Created: 2015/04/16 17:07:53 by grass-kw          #+#    #+#             */
+/*   Updated: 2016/05/24 08:53:12 by grass-kw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *s1, const char *s2)
-{
-	char	*tmp;
-	int		i;
+/*
+*** Print array type **char
+*/
 
-	tmp = s1;
+void	ft_put_array(char **tab)
+{
+	int	i;
+
 	i = 0;
-	while (tmp[i])
-		i++;
-	while (*s2)
+	ft_putendl("array(");
+	while (tab[i])
 	{
-		tmp[i] = *s2;
+		ft_putstr("\t");
+		ft_putnbr(i);
+		ft_putstr(" => ");
+		ft_putendl(tab[i]);
 		i++;
-		s2++;
 	}
-	tmp[i] = '\0';
-	return (s1);
+	ft_putendl("    )");
 }

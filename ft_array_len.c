@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_array_len.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grass-kw <grass-kw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/23 11:37:52 by grass-kw          #+#    #+#             */
-/*   Updated: 2015/04/24 16:58:02 by grass-kw         ###   ########.fr       */
+/*   Created: 2015/04/16 17:07:53 by grass-kw          #+#    #+#             */
+/*   Updated: 2015/04/16 17:16:40 by grass-kw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *s1, const char *s2)
-{
-	char	*tmp;
-	int		i;
+/*
+*** return size of argument (char **)
+*/
 
-	tmp = s1;
+int	ft_array_len(char **tab)
+{
+	int	i;
+
 	i = 0;
-	while (tmp[i])
+	while (tab[i])
 		i++;
-	while (*s2)
-	{
-		tmp[i] = *s2;
-		i++;
-		s2++;
-	}
-	tmp[i] = '\0';
-	return (s1);
+	return (i);
 }

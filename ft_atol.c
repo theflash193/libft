@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grass-kw <grass-kw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/23 11:37:52 by grass-kw          #+#    #+#             */
-/*   Updated: 2015/04/24 16:58:02 by grass-kw         ###   ########.fr       */
+/*   Created: 2015/05/25 18:39:41 by anonymous         #+#    #+#             */
+/*   Updated: 2015/06/02 04:06:15 by grass-kw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *s1, const char *s2)
+long		ft_atol(const char *str)
 {
-	char	*tmp;
-	int		i;
+	unsigned long	result;
+	int				i;
 
-	tmp = s1;
+	result = 0;
 	i = 0;
-	while (tmp[i])
+	while (ft_ispace(*str))
+		str++;
+	if (str[i] == '+' || str[i] == '-')
 		i++;
-	while (*s2)
+	while (ft_isdigit(str[i]))
 	{
-		tmp[i] = *s2;
+		result = result * 10 + (str[i] - '0');
 		i++;
-		s2++;
 	}
-	tmp[i] = '\0';
-	return (s1);
+	if (str[0] == '-')
+		return (-result);
+	return (result);
 }

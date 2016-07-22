@@ -1,32 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_putdata.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grass-kw <grass-kw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/23 11:37:52 by grass-kw          #+#    #+#             */
-/*   Updated: 2015/04/24 16:58:02 by grass-kw         ###   ########.fr       */
+/*   Created: 2015/04/16 09:57:29 by grass-kw          #+#    #+#             */
+/*   Updated: 2015/04/16 10:03:35 by grass-kw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *s1, const char *s2)
+void	ft_putdata(void *data, char const *s, int mode)
 {
-	char	*tmp;
-	int		i;
-
-	tmp = s1;
-	i = 0;
-	while (tmp[i])
-		i++;
-	while (*s2)
-	{
-		tmp[i] = *s2;
-		i++;
-		s2++;
-	}
-	tmp[i] = '\0';
-	return (s1);
+	ft_putstr(s);
+	ft_putstr(" :");
+	if (mode == 1)
+		ft_putstr((char *)data);
+	else if (mode == 2)
+		ft_putnbr((int)data);
+	ft_putstr(" ");
 }
